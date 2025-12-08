@@ -42,6 +42,13 @@ st.title("🔀 Chinese to English Punctuation Switcher")
 
 st.info("Notice any punctuations not changing? Inform the developer to add more to the map.")
 
+st.write("""**How to use this app:**""")
+st.write("""
+1. Paste your Chinese text into the text area.
+2. Click the **Submit** button to convert the punctuation.
+3. The converted text will appear below, ready to be copied.
+         """)
+
 # Initialize session state for text input if it doesn't exist
 if 'text_content' not in st.session_state:
     st.session_state.text_content = ""
