@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.env
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# VS Code 
+.vscode/ 
+# PyCharm 
+.idea/
+
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OCLC tokens and logs
+.oclc_token.json
+api_usage_log.csv
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
