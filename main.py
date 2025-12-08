@@ -49,7 +49,7 @@ st.write("""
 3. The converted text will appear below, ready to be copied.
          """)
 
-with st.expander("🔀 **Punctuation Conversion Rules**", expanded=False):
+with st.expander("🔀 **Punctuation Conversion list**", expanded=False):
     st.write("""
     - `。` → `. `  
     - `，` → `, `  
