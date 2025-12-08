@@ -49,6 +49,23 @@ st.write("""
 3. The converted text will appear below, ready to be copied.
          """)
 
+with st.expander("🔀 **Punctuation Conversion Rules**", expanded=False):
+    st.write("""
+    - `。` → `. `  
+    - `，` → `, `  
+    - `、` → `, `  
+    - `？` → `? `  
+    - `！` → `! `  
+    - `：` → `: `  
+    - `；` → `; `  
+    - `“` → `" `  
+    - `”` → `" `  
+    - `‘` → `' `  
+    - `’` → `' `  
+    - `……` → `...`  
+    - `——` → `--`  
+    """)
+
 # Initialize session state for text input if it doesn't exist
 if 'text_content' not in st.session_state:
     st.session_state.text_content = ""
