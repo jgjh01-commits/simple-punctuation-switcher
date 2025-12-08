@@ -40,6 +40,8 @@ st.markdown("""
 
 st.title("🔀 Chinese to English Punctuation Switcher")
 
+st.info("Notice any punctuations not changing? Inform the developer to add more to the map.")
+
 # Initialize session state for text input if it doesn't exist
 if 'text_content' not in st.session_state:
     st.session_state.text_content = ""
