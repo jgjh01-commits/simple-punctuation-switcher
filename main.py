@@ -1,8 +1,14 @@
 import streamlit as st
+from opencc import OpenCC
+
+converter = OpenCC('t2s')
 
 def replace_punctuation(text):
     if not text:
         return ""
+    
+    # Added conversion from Traditional to Simplified Chinese
+    text = converter.convert(text)
 
     # 1. Handle multi-char first
     text = text.replace('……', '...')
@@ -41,6 +47,8 @@ st.markdown("""
 st.title("🔀 Chinese to English Punctuation Switcher")
 
 st.info("Notice any punctuations not changing? Inform the developer to add more to the map.")
+
+st.info("Update (5 Jan 2026): Added feature to convert Traditional Chinese to Simplified Chinese before punctuation replacement.")
 
 st.write("""**How to use this app:**""")
 st.write("""
