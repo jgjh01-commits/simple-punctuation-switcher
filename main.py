@@ -16,17 +16,19 @@ def replace_punctuation(text):
 
     # 2. Handle single-char
     punctuation_map = {
-        '。': '. ',
+        '。': '. ','……': '...',
           '，': ', ',
             '、': ', ',
               '？': '? ',
                 '！': '! ',
                 '：': ': ',
                   '；': '; ',
-                    '“': '" ',
-                      '”': '" ',
-                        '‘': "' ",
-                        '’': "'"
+                    '“': '"',
+                      '”': '"',
+                        '‘': "'",
+                        '’': "'",
+                        '  ':' ','（': '(', '）': ')'
+
     }
     
     table = str.maketrans(punctuation_map)
@@ -72,6 +74,8 @@ with st.expander("🔀 **Punctuation Conversion list**", expanded=False):
     - `’` → `' `  
     - `……` → `...`  
     - `——` → `--`  
+    - `（` → `( `  
+    - `）` → `) `
     """)
 
 # Initialize session state for text input if it doesn't exist
