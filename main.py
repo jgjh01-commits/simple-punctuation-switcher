@@ -1,5 +1,6 @@
 import streamlit as st
 from opencc import OpenCC
+import re
 
 converter = OpenCC('t2s')
 
@@ -35,7 +36,11 @@ def replace_punctuation(text):
     
     table = str.maketrans(punctuation_map)
     text = text.translate(table)
-    text = text.replace('  ', ' ')  # Clean up double spaces if any
+    
+    # Remove spaces between Chinese characters (but keep spaces after punctuation)
+    text = re.sub(r'([\u4e00-\u9fff])\s+([\u4e00-\u9fff])', r'\1\2', text)
+    
+    text = re.sub(r'\s{2,}', ' ', text)  # Replace 2 or more consecutive spaces with single space
     return text
 
 # --- App Layout ---
@@ -51,6 +56,8 @@ st.markdown("""
 st.title("🔀 Chinese to English Punctuation Switcher")
 
 st.info("Notice any punctuations not changing? Inform the developer to add more to the map.")
+
+st.info("Update (7, 8 Jan 2026): Added support for english commas, line breaks and stray spacing. Includes removing multiple spaces and spaces between characters.")
 
 st.info("Update (5 Jan 2026): Added feature to convert Traditional Chinese to Simplified Chinese before punctuation replacement.")
 
